@@ -1,0 +1,44 @@
+.list-title {
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .list-contents {
+    color: #ffffff;
+  }
+  
+  .list-items {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .list-item {
+    padding: 0.5rem 1.5rem;
+    border-left: 2px solid #fdc00f;
+  }
+  
+  .list-item:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+  
+  .fa-share-alt {
+    float: right;
+    position: relative;
+  }
+  
+  .fa-share-alt:hover {
+    cursor: pointer;
+    color: #fdc00f;
+  }
+  
+  .fa-plus {
+    float: right;
+    position: relative;
+  }
+  
+  .fa-plus:hover {
+    cursor: pointer;
+    color: red;
+  }
+  

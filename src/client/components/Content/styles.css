@@ -1,0 +1,15 @@
+.content {
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+  }
+  
+  .playlist-item {
+    display: block;
+  }
+  
+  .playlist-item:hover {
+    background-color: #bbbbbb;
+    cursor: pointer;
+  }
+  
