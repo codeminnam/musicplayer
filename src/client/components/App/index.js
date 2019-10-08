@@ -1,5 +1,6 @@
 import React from "react";
 import { LeftBar } from "../LeftBar";
+import { RightBar } from "../RightBar";
 import { Content } from "../Content";
 
 import "./styles.css";
@@ -8,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: ["kpop", "soundtracks", "jpop"],
+      items: ["kpop", "soundtracks", "spanish"],
       selectedItems: []
     };
   }
@@ -47,6 +48,7 @@ class App extends React.Component {
           selectedItems={this.state.selectedItems}
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
+        <RightBar />
       </div>
     );
   }

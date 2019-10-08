@@ -1,0 +1,97 @@
+.right-bar {
+    text-align: left;
+    background-color: #eeeeee;
+    border-radius: 0.2rem;
+    padding: 1.1rem;
+    order: 3;
+    width: 25%;
+  }
+  
+  .playlist-title {
+    /* vertical-align: middle; */
+  }
+  
+  .fa-headphones-alt {
+    padding: 0.2rem;
+    margin: 0.3rem;
+    vertical-align: middle;
+    font-size: 2rem;
+  }
+  
+  .playlist-title-text {
+    font-size: 2rem;
+    vertical-align: middle;
+  }
+  
+  .playlist-filter {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .playlist-filter-hot,
+  .playlist-filter-new {
+    display: inline-block;
+    width: 50%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border-radius: 0.2rem;
+    background-color: #bbbbbb;
+    text-align: center;
+  }
+  
+  .playlist-filter-hot:hover,
+  .playlist-filter-new:hover {
+    cursor: pointer;
+    background-color: #aaaaaa;
+  }
+  
+  .playlist-content {
+    margin-top: 0.5rem;
+  }
+  
+  .playlist-song {
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    padding: 0.8rem;
+    margin: 0 0.5rem;
+    border-bottom: 1px solid #aaaaaa;
+    /* vertical-align: middle; */
+  }
+
+  .playlist-img{
+      width:30%;
+  }
+  
+  .playlist-song-content {
+    vertical-align: middle;
+    width:70%;
+  }
+  
+  .playlist-song-title {
+    font-weight: bold;
+    /* display: flex; */
+    /* justify-content: space-between; */
+  }
+  
+  .playlist-song-like {
+    font-size: 70%;
+    color: #777777;
+  }
+  
+  .fa-heart {
+    margin-right: 0.2rem;
+  }
+  
+  .playlist-img {
+  }
+  
+  .playlist-img-thumbnail {
+    width: 80%;
+    height: 100%;
+  }
+
+  .playlist-song-detail{
+      font-size: 80%;
+  }
+  

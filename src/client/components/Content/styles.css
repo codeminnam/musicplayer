@@ -1,7 +1,8 @@
 .content {
     display: inline-block;
-    width: 70%;
+    width: 50%;
     height: 100%;
+    order:2;
   }
   
   .playlist-item {
