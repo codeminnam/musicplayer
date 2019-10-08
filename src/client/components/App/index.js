@@ -1,14 +1,14 @@
 import React from "react";
-import { LeftBar } from "./components/LeftBar";
-import { Content } from "./components/Content";
+import { LeftBar } from "../LeftBar";
+import { Content } from "../Content";
 
 import "./styles.css";
 
 class App extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
-      items: ["kpop", "soundtracks", "jazz"],
+      items: ["kpop", "soundtracks", "jpop"],
       selectedItems: []
     };
   }
