@@ -1,5 +1,5 @@
 import React from "react";
-import { LeftBar } from "../LeftBar";
+import { GenreList } from "../GenreList";
 import { RightBar } from "../RightBar";
 import { Content } from "../Content";
 
@@ -39,7 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <LeftBar
+        <GenreList
           items={this.state.items}
           selectedItems={this.state.selectedItems}
           onUpdateSelectedItems={this.onUpdateSelectedItems}

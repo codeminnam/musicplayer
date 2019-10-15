@@ -1,0 +1,57 @@
+.genrelist{
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.2rem;
+  padding: 1.1rem;
+  order: 1;
+  width: 25%;
+}
+
+.fa-music{
+  padding: 0.2rem;
+  margin: 0.3rem;
+  vertical-align: middle;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.genrelist-title-text {
+  font-size:2rem;
+  vertical-align: middle;
+  color:#ffffff;
+  }
+  
+  .genrelist-contents {
+    margin-top:10px;
+    color: #ffffff;
+  }
+  
+  .genrelist-items {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .genrelist-item:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+  
+  .fa-share-alt {
+    float: right;
+    position: relative;
+  }
+  
+  .fa-share-alt:hover {
+    cursor: pointer;
+    color: #fdc00f;
+  }
+  
+  .fa-plus {
+    float: right;
+    position: relative;
+  }
+  
+  .fa-plus:hover {
+    cursor: pointer;
+    color: red;
+  }
+  
