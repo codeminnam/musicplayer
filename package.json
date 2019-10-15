@@ -19,7 +19,8 @@
     "@fortawesome/react-fontawesome": "^0.1.5",
     "express": "^4.17.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-youtube": "^7.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
