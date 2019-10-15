@@ -1,0 +1,46 @@
+.playlist-song {
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    padding: 0.8rem;
+    margin: 0 0.5rem;
+    border-bottom: 1px solid #aaaaaa;
+    /* vertical-align: middle; */
+  }
+
+  .playlist-img{
+      width:30%;
+  }
+  
+  .playlist-song-content {
+    vertical-align: middle;
+    width:70%;
+  }
+  
+  .playlist-song-title {
+    font-weight: bold;
+    /* display: flex; */
+    /* justify-content: space-between; */
+  }
+  
+  .playlist-song-like {
+    font-size: 70%;
+    color: #777777;
+  }
+  
+  .fa-heart {
+    margin-right: 0.2rem;
+  }
+  
+  .playlist-img {
+  }
+  
+  .playlist-img-thumbnail {
+    width: 80%;
+    height: 100%;
+  }
+
+  .playlist-song-detail{
+      font-size: 80%;
+  }
+  

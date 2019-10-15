@@ -1,7 +1,8 @@
 import React from "react";
 import { LeftBar } from "../LeftBar";
-import { RightBar } from "../RightBar";
+import { PlayList } from "../PlayList";
 import { Content } from "../Content";
+import { list } from "../../mockData/songList.js";
 
 import "./styles.css";
 
@@ -10,8 +11,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       items: ["kpop", "soundtracks", "spanish"],
-      selectedItems: []
+      selectedItems: [],
+      playlistItems: []
     };
+  }
+
+  componentDidMount = () => {
+    const playlistItems = [...this.state.playlistItems];
+    this.setState({
+      playlistItems: list
+    });
   }
 
   onUpdateSelectedItems = newItem => {
@@ -36,6 +45,16 @@ class App extends React.Component {
     });
   };
 
+  onUpdateHotFilter = newItem => {
+    const playlistItems = [...this.state.playlistItems];
+    console.log("hot");
+  }
+
+  onUpdateNewFilter = newItem => {
+    const playlistItems = [...this.state.playlistItems];
+    console.log("new");
+  }
+
   render() {
     return (
       <div className="App">
@@ -48,7 +67,11 @@ class App extends React.Component {
           selectedItems={this.state.selectedItems}
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
-        <RightBar />
+        <PlayList 
+          playlistItems={this.state.playlistItems}
+          onUpdateHotFilter={this.onUpdateHotFilter}
+          onUpdateNewFilter={this.onUpdateNewFilter}
+        />
       </div>
     );
   }
