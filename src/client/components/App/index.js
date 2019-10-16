@@ -2,7 +2,7 @@ import React from "react";
 import { LeftBar } from "../LeftBar";
 import { PlayList } from "../PlayList";
 import { Content } from "../Content";
-import { list } from "../../mockData/songList.js";
+import { list, newSortedList } from "../../mockData/songList.js";
 
 import "./styles.css";
 
@@ -10,9 +10,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      sortingBy: "hot",
       items: ["kpop", "soundtracks", "spanish"],
       selectedItems: [],
-      playlistItems: []
+      playlistItems: [],
+      newSortedItems: []
     };
   }
 
@@ -45,17 +47,35 @@ class App extends React.Component {
     });
   };
 
-  onUpdateHotFilter = newItem => {
-    const playlistItems = [...this.state.playlistItems];
-    console.log("hot");
+  onUpdateFilter = filterType => {
+    console.log(filterType);
+    if(filterType !== "hot" && filterType !== "new") return;
+    this.setState({
+      sortingBy: filterType
+    });   
   }
 
-  onUpdateNewFilter = newItem => {
-    const playlistItems = [...this.state.playlistItems];
-    console.log("new");
+  filterItems = () => {
+    const playListItems = [...this.state.playlistItems];
+    if (this.state.sortingBy === "new") {
+      return this.applyNewSort();
+    }
+    if (this.state.sortingBy === "hot") {
+      return this.applyHotSort(playListItems);
+    }
+    return playListItems;
+  }
+
+  applyNewSort = () => {
+    return newSortedList;
+  }
+
+  applyHotSort = (playlistItems) => {
+    return playlistItems;
   }
 
   render() {
+    const items = this.filterItems();
     return (
       <div className="App">
         <LeftBar
@@ -68,9 +88,8 @@ class App extends React.Component {
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
         <PlayList 
-          playlistItems={this.state.playlistItems}
-          onUpdateHotFilter={this.onUpdateHotFilter}
-          onUpdateNewFilter={this.onUpdateNewFilter}
+          playlistItems={items}
+          onUpdateFilter={this.onUpdateFilter}
         />
       </div>
     );

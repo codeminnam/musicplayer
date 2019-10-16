@@ -11,8 +11,8 @@ export function PlayList(props) {
       <div className="playlist">
         <PlayListTitle />
         <div className="playlist-filter">
-          <div className="playlist-filter-hot" onClick={props.onUpdateHotFilter}>H O T</div>
-          <div className="playlist-filter-new" onClick={props.onUpdateNewFilter}>N E W</div>
+          <div className="playlist-filter-hot" onClick={()=>props.onUpdateFilter("hot")}>H O T</div>
+          <div className="playlist-filter-new" onClick={()=>props.onUpdateFilter("new")}>N E W</div>
         </div>
 
         <div className="playlist-content">
