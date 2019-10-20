@@ -4,6 +4,11 @@
     height: 100%;
     order:2;
   }
+
+  .main-player{
+    margin-top:20px;
+    width: 90%;
+  }
   
   .playlist-item {
     display: block;
