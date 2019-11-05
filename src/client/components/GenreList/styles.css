@@ -5,6 +5,8 @@
   padding: 1.1rem;
   order: 1;
   width: 25%;
+  height: 100%;
+  min-height: 1000px;
 }
 
 .fa-music{
@@ -15,12 +17,6 @@
   color: #ffffff;
 }
 
-.genrelist-title-text {
-  font-size:2rem;
-  vertical-align: middle;
-  color:#ffffff;
-  }
-  
   .genrelist-contents {
     margin-top:10px;
     color: #ffffff;

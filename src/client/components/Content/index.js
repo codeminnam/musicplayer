@@ -6,6 +6,9 @@ import YouTube from "react-youtube";
 export function Content(props) {
   return (
     <div className="content">
+      <div className="player-title">
+        <p>p l a y e r</p>
+      </div>
       <YouTube 
         className="main-player"
         videoId="pjDqdbjpjO4"

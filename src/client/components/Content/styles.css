@@ -3,11 +3,21 @@
     width: 50%;
     height: 100%;
     order:2;
+    min-height: 1000px;
+    padding: 1.1rem;
+  }
+
+  .player-title{
+    text-align: center;
+  }
+
+  .player-title p{
+   color: #aaaaaa; 
   }
 
   .main-player{
-    margin-top:20px;
-    width: 90%;
+    margin-top:6px;
+    width: 100%;
   }
   
   .playlist-item {
