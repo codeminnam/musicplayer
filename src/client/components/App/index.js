@@ -1,7 +1,8 @@
 import React from "react";
 import { LeftBar } from "../LeftBar";
-import { RightBar } from "../RightBar";
+import { PlayList } from "../PlayList";
 import { Content } from "../Content";
+import { list, newSortedList } from "../../mockData/songList.js";
 
 import "./styles.css";
 
@@ -9,9 +10,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      sortingBy: "hot",
       items: ["kpop", "soundtracks", "spanish"],
-      selectedItems: []
+      selectedItems: [],
+      playlistItems: [],
+      newSortedItems: []
     };
+  }
+
+  componentDidMount = () => {
+    const playlistItems = [...this.state.playlistItems];
+    this.setState({
+      playlistItems: list
+    });
   }
 
   onUpdateSelectedItems = newItem => {
@@ -36,7 +47,35 @@ class App extends React.Component {
     });
   };
 
+  onUpdateFilter = filterType => {
+    console.log(filterType);
+    if(filterType !== "hot" && filterType !== "new") return;
+    this.setState({
+      sortingBy: filterType
+    });   
+  }
+
+  filterItems = () => {
+    const playListItems = [...this.state.playlistItems];
+    if (this.state.sortingBy === "new") {
+      return this.applyNewSort();
+    }
+    if (this.state.sortingBy === "hot") {
+      return this.applyHotSort(playListItems);
+    }
+    return playListItems;
+  }
+
+  applyNewSort = () => {
+    return newSortedList;
+  }
+
+  applyHotSort = (playlistItems) => {
+    return playlistItems;
+  }
+
   render() {
+    const items = this.filterItems();
     return (
       <div className="App">
         <LeftBar
@@ -48,7 +87,10 @@ class App extends React.Component {
           selectedItems={this.state.selectedItems}
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
-        <RightBar />
+        <PlayList 
+          playlistItems={items}
+          onUpdateFilter={this.onUpdateFilter}
+        />
       </div>
     );
   }
