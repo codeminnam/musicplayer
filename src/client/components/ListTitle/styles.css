@@ -1,0 +1,12 @@
+  .list-title-text {
+    font-size: 2rem;
+    vertical-align: middle;
+  }
+
+  .list-title--black{
+
+  }
+
+  .list-title--white{
+    color:#ffffff;
+  }

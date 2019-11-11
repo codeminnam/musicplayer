@@ -1,6 +1,6 @@
 import React from "react";
-import { LeftBar } from "../LeftBar";
 import { PlayList } from "../PlayList";
+import { GenreList } from "../GenreList";
 import { Content } from "../Content";
 import { list, newSortedList } from "../../mockData/songList.js";
 
@@ -78,7 +78,7 @@ class App extends React.Component {
     const items = this.filterItems();
     return (
       <div className="App">
-        <LeftBar
+        <GenreList
           items={this.state.items}
           selectedItems={this.state.selectedItems}
           onUpdateSelectedItems={this.onUpdateSelectedItems}
