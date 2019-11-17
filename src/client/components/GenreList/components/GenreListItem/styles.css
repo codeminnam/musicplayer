@@ -1,0 +1,39 @@
+.genrelist-genre {
+    padding: 0.5rem 1.5rem;
+    border-left: 2px solid #fdc00f;
+  }
+
+  .genrelist-genre:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+
+.genrelist-genre-icon{
+  float: right;
+  position: relative;
+}
+
+.fa-caret-down{
+  margin-right: 0.5rem;
+}
+
+.fa-plus:hover, 
+.fa-caret-down:hover {
+  cursor: pointer;
+  color: #fdc00f;
+}
+
+.subgenrelist{
+  border-left: 2px solid #d18a2e;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.subgenre-item{
+  /* display: none; */
+  padding: 0.5rem 2.5rem;
+}
+
+.subgenre-item:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}

@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       sortingBy: "hot",
-      items: ["kpop", "soundtracks", "spanish"],
+      genreList: [],
       selectedItems: [],
       playlistItems: [],
       newSortedItems: []
@@ -22,6 +22,31 @@ class App extends React.Component {
     const playlistItems = [...this.state.playlistItems];
     this.setState({
       playlistItems: list
+    });
+
+    fetch('https://reddit-music-graphql.herokuapp.com/', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+        'Accept':'application/json',
+      },
+      body: JSON.stringify({
+        query: "{ reddits { title subGenreUrlList } }"
+        })
+    }).then(r => r.json())
+    .then(data => {
+      console.log(data);
+      console.log('items:', data.data.reddits);
+      const genre = data.data.reddits.map((reddit, index)=>{
+        return {
+          title: reddit.title,
+          listItems: reddit.subGenreUrlList
+        };
+      });
+
+      this.setState({
+        genreList:genre
+      });
     });
   }
 
@@ -74,12 +99,16 @@ class App extends React.Component {
     return playlistItems;
   }
 
+  onUpdateSubgenreList = () => {
+    return null;
+  }
+
   render() {
     const items = this.filterItems();
     return (
       <div className="App">
         <GenreList
-          items={this.state.items}
+          genres={this.state.genreList}
           selectedItems={this.state.selectedItems}
           onUpdateSelectedItems={this.onUpdateSelectedItems}
         />

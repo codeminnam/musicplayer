@@ -26,28 +26,3 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  .genrelist-item:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-  }
-  
-  .fa-share-alt {
-    float: right;
-    position: relative;
-  }
-  
-  .fa-share-alt:hover {
-    cursor: pointer;
-    color: #fdc00f;
-  }
-  
-  .fa-plus {
-    float: right;
-    position: relative;
-  }
-  
-  .fa-plus:hover {
-    cursor: pointer;
-    color: red;
-  }
-  

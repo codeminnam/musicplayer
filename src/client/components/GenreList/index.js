@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faMusic} from "@fortawesome/free-solid-svg-icons"
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {GenreListSong} from "./components/GenreListSong";
+import {GenreListItem} from "./components/GenreListItem";
 import {ListTitle} from "../ListTitle";
 import "./styles.css";
 
@@ -21,11 +21,12 @@ export function GenreList(props) {
       <ListTitle title="G E N R E L I S T" icon={musicIcon} textColor="white"/>
       <div className="genrelist-contents">
         <div className="genrelist-items">
-          {props.items.map((item, index) => {
+          {props.genres.map((genre, index) => {
             return (
-              <GenreListSong 
+              <GenreListItem
                 key={index} 
-                item={item}
+                title={genre.title}
+                listItems={genre.listItems}
                 selectedItems={props.selectedItems}
                 onUpdateSelectedItems={props.onUpdateSelectedItems}
               />
