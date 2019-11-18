@@ -14,7 +14,7 @@
 }
 
 .fa-caret-down{
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
 }
 
 .fa-plus:hover, 
@@ -28,12 +28,3 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.subgenre-item{
-  /* display: none; */
-  padding: 0.5rem 2.5rem;
-}
-
-.subgenre-item:hover {
-  background-color: rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-}

@@ -11,6 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       sortingBy: "hot",
+      subGenreVisibility: false,
       genreList: [],
       selectedItems: [],
       playlistItems: [],
@@ -100,6 +101,15 @@ class App extends React.Component {
   }
 
   onUpdateSubgenreList = () => {
+    if (this.state.subGenreVisibility === true){
+      this.setState({
+        subGenreVisibility: false
+      })
+    }else{
+      this.setState({
+        subGenreVisibility: true
+      })
+    }
     return null;
   }
 
@@ -110,7 +120,9 @@ class App extends React.Component {
         <GenreList
           genres={this.state.genreList}
           selectedItems={this.state.selectedItems}
+          subGenreVisibility={this.state.subGenreVisibility}
           onUpdateSelectedItems={this.onUpdateSelectedItems}
+          onUpdateSubgenreList={this.onUpdateSubgenreList}
         />
         <Content
           selectedItems={this.state.selectedItems}

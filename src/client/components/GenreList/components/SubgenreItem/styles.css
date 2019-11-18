@@ -1,0 +1,13 @@
+.subgenre-item{
+    /* display: none; */
+    padding: 0.5rem 2.5rem;
+  }
+  
+  .subgenre-item:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  .hidden{
+      display: none;
+  }

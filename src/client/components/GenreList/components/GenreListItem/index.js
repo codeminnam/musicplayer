@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
 import {library} from "@fortawesome/fontawesome-svg-core";
+import {SubgenreItem} from "../SubgenreItem"
 library.add(faPlus);
 library.add(faCaretDown);
 
@@ -16,9 +17,9 @@ export function GenreListItem(props){
                 {!props.selectedItems.includes(title) && (
                     <span class="genrelist-genre-icon">
                         <FontAwesomeIcon
-                        icon={["fa", "caret-down"]}
-                        className="fa-caret-down"
-                        onClick={() => props.onUpdateSelectedItems(title)}
+                            icon={["fa", "caret-down"]}
+                            className="fa-caret-down"
+                            onClick={() => props.onUpdateSubgenreList()}
                         />
                         <FontAwesomeIcon
                             icon={["fa", "plus"]}
@@ -30,7 +31,12 @@ export function GenreListItem(props){
             </div>
             <div className="subgenrelist">
                 {listItems && listItems.length !== 0 && listItems.map((item, index)=>{
-                    return (<div key={item} class="subgenre-item">{item}</div>);
+                    return (
+                        <SubgenreItem 
+                            key={item}
+                            item={item}
+                            subGenreVisibility={props.subGenreVisibility}
+                        />);
                 })}
             </div>
         </div>
