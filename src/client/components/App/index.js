@@ -113,6 +113,12 @@ class App extends React.Component {
     return null;
   }
 
+  ReplaceText = () => {
+    const oldText = "";
+    const newText = oldText.replace("//r//", "");
+    return null;
+  }
+
   render() {
     const items = this.filterItems();
     return (

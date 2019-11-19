@@ -1,6 +1,6 @@
 .subgenre-item{
     /* display: none; */
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 1.5rem 0.5rem 2.5rem;
   }
   
   .subgenre-item:hover {
@@ -8,6 +8,12 @@
     cursor: pointer;
   }
 
-  .hidden{
-      display: none;
+  .subgenre-icon{
+      float:right;
+      position: relative;
+  }
+
+  .fa-plus-sub:hover{
+      cursor: pointer;
+      color: #d18a2e;
   }

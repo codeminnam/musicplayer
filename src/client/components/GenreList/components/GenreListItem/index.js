@@ -30,12 +30,13 @@ export function GenreListItem(props){
                 )}
             </div>
             <div className="subgenrelist">
-                {listItems && listItems.length !== 0 && listItems.map((item, index)=>{
+                {listItems && listItems.length !== 0 && props.subGenreVisibility && listItems.map((item, index)=>{
                     return (
                         <SubgenreItem 
                             key={item}
                             item={item}
                             subGenreVisibility={props.subGenreVisibility}
+                            onUpdateSelectedItems={props.onUpdateSelectedItems}
                         />);
                 })}
             </div>
