@@ -14,7 +14,7 @@ export function SubgenreItem(props){
             <span className="subgenre-icon">
                 <FontAwesomeIcon
                     icon={["fa", "plus"]}
-                    className="fa-plus-sub"
+                    className="fa-plus"
                     onClick={() => props.onUpdateSelectedItems(props.item)}
                 />
             </span>            

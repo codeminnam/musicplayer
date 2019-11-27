@@ -28,9 +28,7 @@ export function GenreList(props) {
                 title={genre.title}
                 listItems={genre.listItems}
                 selectedItems={props.selectedItems}
-                subGenreVisibility={props.subGenreVisibility}
                 onUpdateSelectedItems={props.onUpdateSelectedItems}
-                onUpdateSubgenreList={props.onUpdateSubgenreList}
               />
             );
           })}

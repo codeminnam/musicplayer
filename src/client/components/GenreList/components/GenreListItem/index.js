@@ -4,42 +4,53 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
 import {library} from "@fortawesome/fontawesome-svg-core";
-import {SubgenreItem} from "../SubgenreItem"
+import {SubgenreItem} from "./components/SubgenreItem"
 library.add(faPlus);
 library.add(faCaretDown);
 
-export function GenreListItem(props){
-    const { title, listItems } = props;
-    return(
-        <div className="genrelist-item">
-            <div className="genrelist-genre">
-                <span className="genrelist-genre-title">{title}</span>
-                {!props.selectedItems.includes(title) && (
-                    <span class="genrelist-genre-icon">
-                        <FontAwesomeIcon
-                            icon={["fa", "caret-down"]}
-                            className="fa-caret-down"
-                            onClick={() => props.onUpdateSubgenreList()}
-                        />
-                        <FontAwesomeIcon
-                            icon={["fa", "plus"]}
-                            className="fa-plus"
-                            onClick={() => props.onUpdateSelectedItems(title)}
-                        />
-                    </span>
-                )}
+export class GenreListItem extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            subGenreVisibility: false
+        };
+    }
+
+    onClickButton = () => {
+        this.setState({
+            subGenreVisibility: !this.state.subGenreVisibility
+        });
+    }
+
+    render(){
+        const { title, listItems } = this.props;
+
+        return(
+            <div className="genrelist-item">
+                <div className="genrelist-genre">
+                    <span className="genrelist-genre-title">{title}</span>
+                    {!this.props.selectedItems.includes(title) && (
+                        <span class="genrelist-genre-icon">
+                            <FontAwesomeIcon
+                                icon={["fa", "caret-down"]}
+                                className="fa-caret-down"
+                                onClick={this.onClickButton}
+                            />
+                        </span>
+                    )}
+                </div>
+                <div className="subgenrelist">
+                    {listItems && listItems.length !== 0 && this.state.subGenreVisibility && listItems.map((item, index)=>{
+                        return (
+                            <SubgenreItem 
+                                key={item}
+                                item={item}
+                                subGenreVisibility={this.state.subGenreVisibility}
+                                onUpdateSelectedItems={this.props.onUpdateSelectedItems}
+                            />);
+                    })}
+                </div>
             </div>
-            <div className="subgenrelist">
-                {listItems && listItems.length !== 0 && props.subGenreVisibility && listItems.map((item, index)=>{
-                    return (
-                        <SubgenreItem 
-                            key={item}
-                            item={item}
-                            subGenreVisibility={props.subGenreVisibility}
-                            onUpdateSelectedItems={props.onUpdateSelectedItems}
-                        />);
-                })}
-            </div>
-        </div>
-    );
+        );
+    }
 }
