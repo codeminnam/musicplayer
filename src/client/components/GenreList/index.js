@@ -29,6 +29,7 @@ export function GenreList(props) {
                 listItems={genre.listItems}
                 selectedItems={props.selectedItems}
                 onUpdateSelectedItems={props.onUpdateSelectedItems}
+                onDeleteSelectedItems={props.onDeleteSelectedItems}
               />
             );
           })}

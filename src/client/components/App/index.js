@@ -113,6 +113,7 @@ class App extends React.Component {
           genres={this.state.genreList}
           selectedItems={this.state.selectedItems}
           onUpdateSelectedItems={this.onUpdateSelectedItems}
+          onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
         <Content
           selectedItems={this.state.selectedItems}

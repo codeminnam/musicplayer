@@ -46,8 +46,11 @@ export class GenreListItem extends React.Component{
                                 key={item}
                                 item={item}
                                 subGenreVisibility={this.state.subGenreVisibility}
+                                selectedItems={this.props.selectedItems}
                                 onUpdateSelectedItems={this.props.onUpdateSelectedItems}
-                            />);
+                                onDeleteSelectedItems={this.props.onDeleteSelectedItems}
+                            />
+                        );
                     })}
                 </div>
             </div>
