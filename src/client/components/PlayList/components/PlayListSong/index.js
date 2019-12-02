@@ -19,7 +19,7 @@ export function PlayListSong(props){
             </div>
             <div className="playlist-song-content">
                 <div className="playlist-song-title">
-                    <span>{info.title}</span>  
+                    <span>{info.item}</span>  
                 </div>
                 <div className="playlist-song-detail">
                     {info.author} •{info.date} •{info.genre}

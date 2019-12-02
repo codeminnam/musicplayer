@@ -2,7 +2,7 @@ import React from "react";
 import { PlayList } from "../PlayList";
 import { GenreList } from "../GenreList";
 import { Content } from "../Content";
-import { list, newSortedList } from "../../mockData/songList.js";
+// import { list, newSortedList } from "../../mockData/songList.js";
 
 import "./styles.css";
 
@@ -19,10 +19,10 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    const playlistItems = [...this.state.playlistItems];
-    this.setState({
-      playlistItems: list
-    });
+    // const playlistItems = [...this.state.playlistItems];
+    // this.setState({
+    //   playlistItems: list
+    // });
 
     fetch('https://reddit-music-graphql.herokuapp.com/', {
       method: 'POST',
@@ -72,6 +72,36 @@ class App extends React.Component {
     });
   };
 
+  onUpdatePlaylistItems = () => {
+    const playlistItems = [...this.state.playlistItems];
+
+    fetch('https://reddit-music-graphql.herokuapp.com/', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+        'Accept':'application/json',
+      },
+      body: JSON.stringify({
+        query: '{ playlist(redditUrls: ["kpop", "jazz"]) { name songs } }'
+      })
+    }).then(r => r.json())
+    .then(data => {
+      console.log(data);
+      console.log('items:', data.data.playlist);
+      const playlistSongs = data.data.playlist.map((song, index)=>{
+        return {
+          songs: song.songs
+        }
+      });
+
+      this.setState({
+        playlistItems: playlistSongs
+      });
+      console.log('playlistitems', playlistSongs);
+
+    });
+  };
+
   onUpdateFilter = filterType => {
     console.log(filterType);
     if(filterType !== "hot" && filterType !== "new") return;
@@ -117,6 +147,8 @@ class App extends React.Component {
         />
         <Content
           selectedItems={this.state.selectedItems}
+          playlistItems={this.state.playlistItems}
+          onUpdatePlaylistItems={this.onUpdatePlaylistItems}
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
         <PlayList 

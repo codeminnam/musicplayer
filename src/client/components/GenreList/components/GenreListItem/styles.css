@@ -18,6 +18,11 @@
   color: #fdc00f;
 }
 
+.fa-caret-up:hover {
+  cursor: pointer;
+  color: #fdc00f;
+}
+
 .subgenrelist{
   border-left: 2px solid #d18a2e;
   background-color: rgba(0, 0, 0, 0.2);
