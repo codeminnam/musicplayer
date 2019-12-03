@@ -50,7 +50,6 @@ export class GenreListItem extends React.Component{
                 <div className="subgenrelist">
                     {listItems && listItems.length !== 0 && this.state.subGenreVisibility && listItems.map((item, index)=>{
                         const newItem = item.replace("/r/", "");
-                        console.log(newItem);
                         return (
                             <SubgenreItem 
                                 key={item}

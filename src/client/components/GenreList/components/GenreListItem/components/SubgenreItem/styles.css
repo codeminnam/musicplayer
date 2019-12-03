@@ -13,7 +13,8 @@
       position: relative;
   }
 
-  .fa-plus:hover{
+  .fa-plus-sub:hover, 
+  .fa-times-sub:hover{
       cursor: pointer;
       color: #d18a2e;
   }

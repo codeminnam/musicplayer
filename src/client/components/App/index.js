@@ -19,10 +19,6 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    // const playlistItems = [...this.state.playlistItems];
-    // this.setState({
-    //   playlistItems: list
-    // });
 
     fetch('https://reddit-music-graphql.herokuapp.com/', {
       method: 'POST',
@@ -88,9 +84,9 @@ class App extends React.Component {
     .then(data => {
       console.log(data);
       console.log('items:', data.data.playlist);
-      const playlistSongs = data.data.playlist.map((song, index)=>{
+      const playlistSongs = data.data.playlist.map((songList, index)=>{
         return {
-          songs: song.songs
+          songs: songList.songs
         }
       });
 
