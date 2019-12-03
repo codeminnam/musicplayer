@@ -7,10 +7,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faHeart);
 
 export function PlayListSong(props){
-    const info = props.information;
+    const info = props.info;
     return(
         <div className="playlist-song" info={info}>
-            <div className="playlist-img">
+            <p>{info}</p>
+            {/* <div className="playlist-img">
                 <img
                     src={info.image}
                     alt=""
@@ -19,7 +20,7 @@ export function PlayListSong(props){
             </div>
             <div className="playlist-song-content">
                 <div className="playlist-song-title">
-                    <span>{info.item}</span>  
+                    <span>{info}</span>  
                 </div>
                 <div className="playlist-song-detail">
                     {info.author} •{info.date} •{info.genre}
@@ -31,7 +32,7 @@ export function PlayListSong(props){
                       />
                       <span>{info.like}</span>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

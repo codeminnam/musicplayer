@@ -82,7 +82,7 @@ class App extends React.Component {
         'Accept':'application/json',
       },
       body: JSON.stringify({
-        query: '{ playlist(redditUrls: ["kpop", "jazz"]) { name songs } }'
+        query: '{ playlist(redditUrls: ["soundtrack", "jazz"]) { name songs } }'
       })
     }).then(r => r.json())
     .then(data => {
