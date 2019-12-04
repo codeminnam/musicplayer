@@ -29,7 +29,7 @@ export function Content(props) {
       })}
 
       {
-        props.selectedItems && props.selectedItems !== 0 &&
+        props.selectedItems && props.selectedItems.length > 0 &&
         <button onClick={props.onUpdatePlaylistItems}>Make a playlist</button>
       }
     </div>
