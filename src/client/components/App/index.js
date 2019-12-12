@@ -2,7 +2,6 @@ import React from "react";
 import { PlayList } from "../PlayList";
 import { GenreList } from "../GenreList";
 import { Content } from "../Content";
-// import { list, newSortedList } from "../../mockData/songList.js";
 
 import "./styles.css";
 
@@ -11,6 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       sortingBy: "hot",
+      currentSong: "",
       genreList: [],
       selectedItems: [],
       playlistItems: [],
@@ -46,6 +46,12 @@ class App extends React.Component {
     });
   }
 
+  onUpdateCurrentSong = newItem =>{
+    this.setState({
+      currentSong: newItem
+    });
+  }
+
   onUpdateSelectedItems = newItem => {
     const selectedItems = [...this.state.selectedItems];
     if (!selectedItems.includes(newItem)) {
@@ -78,7 +84,7 @@ class App extends React.Component {
         'Accept':'application/json',
       },
       body: JSON.stringify({
-        query: '{ playlist(redditUrls: ["soundtrack", "jazz"]) { name songs } }'
+        query: '{ playlist(redditUrls: ["kpop", "country"]) { name songs{name url imageUrl} } }'
       })
     }).then(r => r.json())
     .then(data => {
@@ -136,13 +142,16 @@ class App extends React.Component {
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
         <Content
+          currentSong={this.state.currentSong}
           selectedItems={this.state.selectedItems}
           playlistItems={this.state.playlistItems}
           onUpdatePlaylistItems={this.onUpdatePlaylistItems}
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
         <PlayList 
+          currentSong={this.state.currentSong}
           playlistItems={items}
+          onUpdateCurrentSong={this.onUpdateCurrentSong}
           onUpdateFilter={this.onUpdateFilter}
         />
       </div>

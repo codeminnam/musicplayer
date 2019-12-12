@@ -28,7 +28,11 @@ export function PlayList(props) {
               <div key={index}>
                 {genre.songs.map((song, index)=>{
                   return(
-                    <PlayListSong key={index} info={song}></PlayListSong>
+                    <PlayListSong 
+                      key={index} 
+                      info={song}
+                      onUpdateCurrentSong={props.onUpdateCurrentSong}
+                    ></PlayListSong>
                   );
                 })
                 }
