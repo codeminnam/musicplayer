@@ -76,6 +76,16 @@ class App extends React.Component {
 
   onUpdatePlaylistItems = () => {
     const playlistItems = [...this.state.playlistItems];
+    const selectedItems = [...this.state.selectedItems];
+
+    // var query = `query playlistItems($selectedItems: array)
+    // {playlist(redditUrls: [selectedItems]) { name songs{name url imageUrl} }}`;
+
+    var query = `query playlist($selectedItems: [String]!){
+      playlist(redditUrls: $selectedItems) { name songs{name url imageUrl} }
+    }`;
+
+    var query2 = `query playlist($redditUrls: []) { name songs{name url imageUrl} }`
 
     fetch('https://reddit-music-graphql.herokuapp.com/', {
       method: 'POST',
@@ -84,7 +94,9 @@ class App extends React.Component {
         'Accept':'application/json',
       },
       body: JSON.stringify({
-        query: '{ playlist(redditUrls: ["kpop", "country"]) { name songs{name url imageUrl} } }'
+        // query: '{ playlist(redditUrls: ["kpop", "country"]) { name songs{name url imageUrl} } }'
+        query: query,
+        variables: {selectedItems}
       })
     }).then(r => r.json())
     .then(data => {

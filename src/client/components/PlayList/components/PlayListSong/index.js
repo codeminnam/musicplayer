@@ -9,7 +9,7 @@ library.add(faHeart);
 export function PlayListSong(props){
     const info = props.info;
     return(
-        <div className="playlist-song">
+        <div className="playlist-song" onClick={() => props.onUpdateCurrentSong(info.url)}>
             <div className="playlist-img">
                 <img
                     src={info.imageUrl}
