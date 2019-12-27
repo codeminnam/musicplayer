@@ -47,8 +47,9 @@ class App extends React.Component {
   }
 
   onUpdateCurrentSong = newItem =>{
+    const videoId = newItem.match(/(\?|&)v=([^&#]+)/).pop();
     this.setState({
-      currentSong: newItem
+      currentSong: videoId
     });
   }
 

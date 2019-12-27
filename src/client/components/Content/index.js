@@ -10,10 +10,10 @@ export function Content(props) {
         <p>p l a y e r</p>
       </div>
       {
-        props.playlistItems && props.playlistItems.length !==0 &&
+        props.currentSong && props.currentSong.length !==0 &&
         <YouTube 
           className="main-player"
-          videoId="pjDqdbjpjO4"
+          videoId={props.currentSong}
         />
       }
       
