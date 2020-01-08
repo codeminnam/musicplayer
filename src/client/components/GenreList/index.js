@@ -21,6 +21,7 @@ export function GenreList(props) {
       <ListTitle title="G E N R E L I S T" icon={musicIcon} textColor="white"/>
       <div className="genrelist-contents">
         <div className="genrelist-items">
+          
           {props.genres.map((genre, index) => {
             return (
               <GenreListItem

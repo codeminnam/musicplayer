@@ -30,8 +30,11 @@ export function Content(props) {
 
       {
         props.selectedItems && props.selectedItems.length > 0 &&
-        <button onClick={props.onUpdatePlaylistItems}>Make a playlist</button>
+        <div 
+          className="playlist-button"
+          onClick={props.onUpdatePlaylistItems}>Make a playlist</div>
       }
     </div>
   );
 }
+

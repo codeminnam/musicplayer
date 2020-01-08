@@ -1,14 +1,11 @@
 .chip {
     border: 1px solid #777777;
     display: inline-block;
-    padding: 0.3rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 2rem;
     color: #777777;
     margin: 0.3rem;
-  }
-  
-  .chip:hover {
-    background-color: #eeeeee;
+    background-color: #f1f1f1;
   }
   
   .chip-span {
@@ -17,16 +14,13 @@
   
   .fa-times-chip {
     margin-left: 0.5rem;
-    border: 1px solid #777777;
-    border-radius: 100%;
-    font-size: 0.5rem;
-    padding: 0.3rem;
-    background-color: #aaaaaa;
-    color: #eeeeee;
+    font-size: 0.8rem;
+    padding-left: 0.3rem;
     vertical-align: middle;
   }
   
   .fa-times-chip:hover {
     cursor: pointer;
+    color: #444444;
   }
   
