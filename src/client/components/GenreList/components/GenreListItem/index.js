@@ -50,10 +50,11 @@ export class GenreListItem extends React.Component{
                 <div className="subgenrelist">
                     {listItems && listItems.length !== 0 && this.state.subGenreVisibility && listItems.map((item, index)=>{
                         const newItem = item.replace("/r/", "");
+                        const capItem = newItem.charAt(0).toUpperCase()+newItem.slice(1);
                         return (
                             <SubgenreItem 
                                 key={item}
-                                item={newItem}
+                                item={capItem}
                                 subGenreVisibility={this.state.subGenreVisibility}
                                 selectedItems={this.props.selectedItems}
                                 onUpdateSelectedItems={this.props.onUpdateSelectedItems}
