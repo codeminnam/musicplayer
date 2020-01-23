@@ -29,3 +29,4 @@ node_modules
 .lock-wscript
 
 build/bundle.js
+build/bundle.js
