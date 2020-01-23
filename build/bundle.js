@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b9982112e526950b5e94";
+/******/ 	var hotCurrentHash = "97aeacbc1f522722ebaf";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -872,7 +872,7 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".subgenre-item {\\n  /* display: none; */\\n  padding: 0.5rem 1.5rem 0.5rem 2.5rem; }\\n\\n.subgenre-item:hover {\\n  background-color: rgba(0, 0, 0, 0.4);\\n  cursor: pointer; }\\n\\n.subgenre-icon {\\n  float: right;\\n  position: relative; }\\n\\n.fa-plus-sub:hover,\\n.fa-times-sub:hover {\\n  cursor: pointer;\\n  color: #d18a2e; }\\n\\n.visibility-none {\\n  display: none;\\n  transition: all 1000ms ease-in; }\\n\\n.visibility-visible {\\n  display: block;\\n  transition: all 1000ms ease-in; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/client/components/GenreList/components/GenreListItem/components/SubgenreItem/styles.css?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".subgenre-item {\\n  padding: 0.5rem 1.5rem 0.5rem 2.5rem;\\n  position: relative; }\\n\\n.subgenre-item:hover {\\n  background-color: #222222;\\n  cursor: pointer; }\\n\\n.subgenre-icon {\\n  right: 23px;\\n  position: absolute; }\\n\\n.fa-plus-sub:hover,\\n.fa-times-sub:hover {\\n  cursor: pointer;\\n  color: #d18a2e; }\\n\\n.visibility-none {\\n  visibility: hidden; }\\n\\n.visibility-visible {\\n  visibility: visible; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/client/components/GenreList/components/GenreListItem/components/SubgenreItem/styles.css?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -883,7 +883,7 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".genrelist-genre {\\n  padding: 0.5rem 1.5rem;\\n  border-left: 2px solid #fdc00f;\\n  z-index: 100; }\\n\\n.genrelist-genre:hover {\\n  background-color: #222222;\\n  cursor: pointer; }\\n\\n.genrelist-genre-icon {\\n  float: right;\\n  position: relative; }\\n\\n.fa-caret-down:hover {\\n  cursor: pointer;\\n  color: #fdc00f; }\\n\\n.fa-caret-up:hover {\\n  cursor: pointer;\\n  color: #fdc00f; }\\n\\n.subgenrelist {\\n  border-left: 2px solid #d18a2e;\\n  background-color: #333333; }\\n\\n.animation-origin {\\n  max-height: 0;\\n  visibility: hidden;\\n  transition: all 1000ms ease-in; }\\n\\n.animation-growth {\\n  max-height: 600px;\\n  visibility: visible;\\n  transition: all 1000ms ease-in; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/client/components/GenreList/components/GenreListItem/styles.css?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".genrelist-genre {\\n  padding: 0.5rem 1.5rem;\\n  border-left: 2px solid #fdc00f;\\n  position: relative;\\n  z-index: 200; }\\n\\n.genrelist-genre:hover {\\n  background-color: #222222;\\n  cursor: pointer; }\\n\\n.genrelist-genre-icon {\\n  right: 25px;\\n  position: absolute; }\\n\\n.fa-caret-down:hover {\\n  cursor: pointer;\\n  color: #fdc00f; }\\n\\n.fa-caret-up:hover {\\n  cursor: pointer;\\n  color: #fdc00f; }\\n\\n.subgenrelist {\\n  border-left: 2px solid #d18a2e;\\n  background-color: #333333; }\\n\\n.animation-origin {\\n  max-height: 0;\\n  z-index: 100;\\n  /* visibility: hidden; */\\n  transition: all 1000ms ease-in; }\\n\\n.animation-growth {\\n  max-height: 3000px;\\n  visibility: visible;\\n  transition: all 1000ms ease-in; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/client/components/GenreList/components/GenreListItem/styles.css?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 

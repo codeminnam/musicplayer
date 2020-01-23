@@ -1,16 +1,16 @@
 .subgenre-item{
-    /* display: none; */
     padding: 0.5rem 1.5rem 0.5rem 2.5rem;
+    position: relative;
   }
   
   .subgenre-item:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #222222;
     cursor: pointer;
   }
 
   .subgenre-icon{
-      float:right;
-      position: relative;
+      right: 23px;
+      position: absolute;
   }
 
   .fa-plus-sub:hover, 
@@ -20,12 +20,10 @@
   }
   
 .visibility-none{
-  display: none;
-  transition: all 1000ms ease-in;
+  visibility: hidden;
 }
 
 .visibility-visible{
-  display: block;
-  transition: all 1000ms ease-in;
+  visibility: visible;
 }
   
