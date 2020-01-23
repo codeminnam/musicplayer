@@ -2,7 +2,6 @@
     padding: 0.5rem 1.5rem;
     border-left: 2px solid #fdc00f;
     position: relative;
-    z-index:200;
   }
 
   .genrelist-genre:hover {
@@ -32,7 +31,6 @@
 
 .animation-origin{
   max-height: 0;
-  z-index: 100;
   overflow: hidden;
   transition: all 1000ms ease-in;
 }
