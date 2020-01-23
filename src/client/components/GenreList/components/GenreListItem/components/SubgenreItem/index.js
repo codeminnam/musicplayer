@@ -14,16 +14,17 @@ export function SubgenreItem(props){
                 {props.item}
             </span>
             <span className="subgenre-icon">
-                { props.selectedItems.includes(props.item) ?
+                {/* { props.selectedItems.includes(props.item) ?
                     (<FontAwesomeIcon
                         icon={["fa", "times"]}
                         className="fa-times-sub"
                         onClick={() => props.onDeleteSelectedItems(props.item)}
                     />)
-                    :
+                    : */}
+                {
                     (<FontAwesomeIcon
                         icon={["fa", "plus"]}
-                        className="fa-plus-sub"
+                        className={`fa-plus-sub animation-${props.selectedItems.includes(props.item)?"cross" : "plus"}`}
                         onClick={() => props.onUpdateSelectedItems(props.item)}
                     />)
                 }

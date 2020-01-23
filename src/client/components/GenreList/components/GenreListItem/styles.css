@@ -33,12 +33,12 @@
 .animation-origin{
   max-height: 0;
   z-index: 100;
-  /* visibility: hidden; */
+  overflow: hidden;
   transition: all 1000ms ease-in;
 }
 
 .animation-growth{
   max-height: 3000px;
-  visibility: visible;
+  overflow:visible;
   transition: all 1000ms ease-in;
 }

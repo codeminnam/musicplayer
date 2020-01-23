@@ -20,10 +20,18 @@
   }
   
 .visibility-none{
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .visibility-visible{
-  visibility: visible;
+  /* visibility: visible; */
+}
+
+.animation-plus{
+  transition: all ease 1s;
 }
   
+.animation-cross{
+  transform: rotate(45deg);
+  transition: all ease 1s;
+}
