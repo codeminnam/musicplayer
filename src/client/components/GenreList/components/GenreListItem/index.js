@@ -47,8 +47,8 @@ export class GenreListItem extends React.Component{
                     />
                 </span>)}
                 </div>
-                <div className="subgenrelist">
-                    {listItems && listItems.length !== 0 && this.state.subGenreVisibility && listItems.map((item, index)=>{
+                <div className = {`subgenrelist animation-${this.state.subGenreVisibility? "growth" : "origin"}`}>
+                    {listItems && listItems.length !== 0 && listItems.map((item, index)=>{
                         const newItem = item.replace("/r/", "");
                         const capItem = newItem.charAt(0).toUpperCase()+newItem.slice(1);
                         return (

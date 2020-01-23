@@ -19,5 +19,13 @@
       color: #d18a2e;
   }
   
+.visibility-none{
+  display: none;
+  transition: all 1000ms ease-in;
+}
 
+.visibility-visible{
+  display: block;
+  transition: all 1000ms ease-in;
+}
   

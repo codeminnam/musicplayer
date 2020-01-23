@@ -9,7 +9,7 @@ library.add(faTimes);
 
 export function SubgenreItem(props){
     return (
-        <div className='subgenre-item'>
+        <div className={`subgenre-item visibility-${props.subGenreVisibility? "visible" : "none"}`}>
             <span className="subgenre-title">
                 {props.item}
             </span>

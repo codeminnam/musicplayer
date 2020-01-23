@@ -1,6 +1,6 @@
 .genrelist{
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #aaaaaa;
   border-radius: 0.2rem;
   padding: 1.1rem;
   order: 1;
@@ -13,7 +13,6 @@
   padding: 0.2rem;
   margin: 0.3rem;
   vertical-align: middle;
-  font-size: 2rem;
   color: #ffffff;
 }
 
@@ -23,6 +22,6 @@
   }
   
   .genrelist-items {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #555555;
   }
 

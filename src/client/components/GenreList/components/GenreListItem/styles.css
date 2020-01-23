@@ -1,10 +1,11 @@
 .genrelist-genre {
     padding: 0.5rem 1.5rem;
     border-left: 2px solid #fdc00f;
+    z-index:100;
   }
 
   .genrelist-genre:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #222222;
     cursor: pointer;
   }
 
@@ -25,6 +26,17 @@
 
 .subgenrelist{
   border-left: 2px solid #d18a2e;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #333333;
 }
 
+.animation-origin{
+  max-height: 0;
+  visibility: hidden;
+  transition: all 1000ms ease-in;
+}
+
+.animation-growth{
+  max-height: 600px;
+  visibility: visible;
+  transition: all 1000ms ease-in;
+}
