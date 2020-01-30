@@ -19,14 +19,6 @@
       color: #d18a2e;
   }
   
-.visibility-none{
-  /* visibility: hidden; */
-}
-
-.visibility-visible{
-  /* visibility: visible; */
-}
-
 .animation-plus{
   transition: all ease 1s;
 }

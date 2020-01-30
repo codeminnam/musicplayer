@@ -32,11 +32,11 @@
 .animation-origin{
   max-height: 0;
   overflow: hidden;
-  transition: all 1000ms ease-in;
+  transition: all 5000ms ease-in;
 }
 
 .animation-growth{
   max-height: 3000px;
   overflow:visible;
-  transition: all 1000ms ease-in;
+  transition: all 5000ms ease-in;
 }
