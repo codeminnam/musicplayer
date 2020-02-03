@@ -2,6 +2,7 @@
     padding: 0.5rem 1.5rem;
     border-left: 2px solid #fdc00f;
     position: relative;
+    background-color: #555555;
   }
 
   .genrelist-genre:hover {

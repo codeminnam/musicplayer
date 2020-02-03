@@ -38,7 +38,7 @@ export function GenreList(props) {
             )})
           : 
             <FontAwesomeIcon
-              icon={["fa", "spinner"]} className="fa-spin" rotation={180} />
+              icon={["fa", "spinner"]} className="fa-spin genrelist-spinner" rotation={180} />
           
             }
         </div>

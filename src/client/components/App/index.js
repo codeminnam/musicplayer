@@ -113,7 +113,6 @@ class App extends React.Component {
         playlistItems: playlistSongs
       });
       console.log('playlistitems', playlistSongs);
-
     });
   };
 
