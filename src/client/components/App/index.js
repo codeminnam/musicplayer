@@ -79,14 +79,9 @@ class App extends React.Component {
     const playlistItems = [...this.state.playlistItems];
     const selectedItems = [...this.state.selectedItems];
 
-    // var query = `query playlistItems($selectedItems: array)
-    // {playlist(redditUrls: [selectedItems]) { name songs{name url imageUrl} }}`;
-
     var query = `query playlist($selectedItems: [String]!){
       playlist(redditUrls: $selectedItems) { name songs{name url imageUrl} }
     }`;
-
-    var query2 = `query playlist($redditUrls: []) { name songs{name url imageUrl} }`
 
     fetch('https://reddit-music-graphql.herokuapp.com/', {
       method: 'POST',
@@ -95,7 +90,6 @@ class App extends React.Component {
         'Accept':'application/json',
       },
       body: JSON.stringify({
-        // query: '{ playlist(redditUrls: ["kpop", "country"]) { name songs{name url imageUrl} } }'
         query: query,
         variables: {selectedItems}
       })
@@ -105,6 +99,7 @@ class App extends React.Component {
       console.log('items:', data.data.playlist);
       const playlistSongs = data.data.playlist.map((songList, index)=>{
         return {
+          name: songList.name,
           songs: songList.songs
         }
       });
@@ -112,8 +107,13 @@ class App extends React.Component {
       this.setState({
         playlistItems: playlistSongs
       });
+
       console.log('playlistitems', playlistSongs);
+
     });
+
+    // console.log('url', this.playlistItems[0].songs[0].url);
+    // this.onUpdateCurrentSong(this.playListItems[0].songs[0].url);
   };
 
   onUpdateFilter = filterType => {

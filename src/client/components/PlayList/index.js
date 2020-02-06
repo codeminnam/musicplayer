@@ -30,7 +30,8 @@ export function PlayList(props) {
                   return(
                     <PlayListSong 
                       key={index} 
-                      info={song}
+                      songInfo={song}
+                      genreName={genre.name}
                       onUpdateCurrentSong={props.onUpdateCurrentSong}
                     ></PlayListSong>
                   );

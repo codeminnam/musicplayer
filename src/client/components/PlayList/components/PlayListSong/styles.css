@@ -22,9 +22,17 @@
   }
   
   .playlist-song-title {
-    /* font-weight: bold; */
-    /* display: flex; */
-    /* justify-content: space-between; */
+    font-weight: bold;
+  }
+
+  .playlist-genre{
+    background-color: #ddd;
+    border:none;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    border-radius: 16px;
+    padding: 5px 10px 5px 10px;
   }
   
   .playlist-song-like {

@@ -23,7 +23,6 @@
   
   .genrelist-items {
     background-color: #555555;
-    min-height: 700px;
     display: flex;
     flex-direction: column;
   }
