@@ -43,3 +43,8 @@
     color: #fdc00f;
   }
   
+  @media(min-width:0em) and (max-width:47em){
+    .content{
+      width: 100%;
+    }
+  }

@@ -39,6 +39,9 @@ class App extends React.Component {
           listItems: reddit.subGenreUrlList
         };
       });
+      
+      // const found = genre.listItems.find(element => element> 0);
+      // console.log('found: ', found);
 
       this.setState({
         genreList:genre
@@ -112,6 +115,7 @@ class App extends React.Component {
 
     });
 
+    
     // console.log('url', this.playlistItems[0].songs[0].url);
     // this.onUpdateCurrentSong(this.playListItems[0].songs[0].url);
   };

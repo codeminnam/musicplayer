@@ -41,3 +41,7 @@
   overflow:visible;
   transition: all 5000ms ease-in;
 }
+
+.genrelist-genre-title{
+  max-width: 90%;
+}

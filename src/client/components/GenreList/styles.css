@@ -9,6 +9,8 @@
   min-height: 1000px;
 }
 
+
+
 .fa-music{
   padding: 0.2rem;
   margin: 0.3rem;
@@ -34,3 +36,13 @@
     margin: 100% auto;
   }
 
+
+  @media(min-width:47em){
+
+  }
+  
+  @media(min-width:0em) and (max-width:47em){
+    .genrelist{
+      width: 100%;
+    } 
+  }

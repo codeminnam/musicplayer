@@ -42,4 +42,9 @@
     margin-top: 0.5rem;
   }
   
+  @media(min-width:0em) and (max-width:47em){
+    .playlist{
+      width: 100%;
+    }
+  }
   
