@@ -13,7 +13,6 @@
     padding: 0.2rem;
     margin: 0.3rem;
     vertical-align: middle;
-    font-size: 2rem;
   }
 
   
@@ -43,4 +42,9 @@
     margin-top: 0.5rem;
   }
   
+  @media(min-width:0em) and (max-width:47em){
+    .playlist{
+      width: 100%;
+    }
+  }
   

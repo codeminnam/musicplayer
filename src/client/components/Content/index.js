@@ -9,10 +9,14 @@ export function Content(props) {
       <div className="player-title">
         <p>p l a y e r</p>
       </div>
-      <YouTube 
-        className="main-player"
-        videoId="pjDqdbjpjO4"
-      />
+      {
+        props.currentSong && props.currentSong.length !==0 &&
+        <YouTube 
+          className="main-player"
+          videoId={props.currentSong}
+        />
+      }
+      
       {props.selectedItems.map((item, index) => {
         return (
             <Chip
@@ -23,6 +27,14 @@ export function Content(props) {
             />
         );
       })}
+
+      {
+        props.selectedItems && props.selectedItems.length > 0 &&
+        <div 
+          className="playlist-button"
+          onClick={props.onUpdatePlaylistItems}>Make a playlist</div>
+      }
     </div>
   );
 }
+

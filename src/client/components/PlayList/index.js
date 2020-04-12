@@ -23,9 +23,22 @@ export function PlayList(props) {
         </div>
 
         <div className="playlist-content">
-          {props.playlistItems.map((song, index) => {
+          {props.playlistItems.map((genre, index) => {
             return (
-              <PlayListSong key={`${song.title}${index}`} information={song}/>
+              <div key={index}>
+                {genre.songs.map((song, index)=>{
+                  return(
+                    <PlayListSong 
+                      key={index} 
+                      songInfo={song}
+                      genreName={genre.name}
+                      onUpdateCurrentSong={props.onUpdateCurrentSong}
+                    ></PlayListSong>
+                  );
+                })
+                }
+              </div>
+            
             );
           })}
         </div>

@@ -28,4 +28,23 @@
     background-color: #bbbbbb;
     cursor: pointer;
   }
+
+  .playlist-button{
+    border: 1px solid #777777;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    color: #f1f1f1;
+    margin: 0.3rem;
+    background-color: #777777;
+  }
+
+  .playlist-button:hover{
+    cursor: pointer;
+    color: #fdc00f;
+  }
   
+  @media(min-width:0em) and (max-width:47em){
+    .content{
+      width: 100%;
+    }
+  }

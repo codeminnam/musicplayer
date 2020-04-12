@@ -1,6 +1,6 @@
 .genrelist{
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #aaaaaa;
   border-radius: 0.2rem;
   padding: 1.1rem;
   order: 1;
@@ -9,11 +9,12 @@
   min-height: 1000px;
 }
 
+
+
 .fa-music{
   padding: 0.2rem;
   margin: 0.3rem;
   vertical-align: middle;
-  font-size: 2rem;
   color: #ffffff;
 }
 
@@ -23,31 +24,25 @@
   }
   
   .genrelist-items {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #555555;
+    display: flex;
+    flex-direction: column;
   }
 
-  .genrelist-item:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
+  .genrelist-spinner{
+    text-align: center;
+    height: 50px;
+    width: 50px !important;
+    margin: 100% auto;
+  }
+
+
+  @media(min-width:47em){
+
   }
   
-  .fa-share-alt {
-    float: right;
-    position: relative;
+  @media(min-width:0em) and (max-width:47em){
+    .genrelist{
+      width: 100%;
+    } 
   }
-  
-  .fa-share-alt:hover {
-    cursor: pointer;
-    color: #fdc00f;
-  }
-  
-  .fa-plus {
-    float: right;
-    position: relative;
-  }
-  
-  .fa-plus:hover {
-    cursor: pointer;
-    color: red;
-  }
-  

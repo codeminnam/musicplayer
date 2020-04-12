@@ -1,0 +1,29 @@
+.subgenre-item{
+    padding: 0.5rem 1.5rem 0.5rem 2.5rem;
+    position: relative;
+  }
+  
+  .subgenre-item:hover {
+    background-color: #222222;
+    cursor: pointer;
+  }
+
+  .subgenre-icon{
+      right: 23px;
+      position: absolute;
+  }
+
+  .fa-plus-sub:hover, 
+  .fa-times-sub:hover{
+      cursor: pointer;
+      color: #d18a2e;
+  }
+  
+.animation-plus{
+  transition: all ease 1s;
+}
+  
+.animation-cross{
+  transform: rotate(45deg);
+  transition: all ease 1s;
+}

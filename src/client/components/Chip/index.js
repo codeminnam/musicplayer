@@ -12,7 +12,7 @@ export function Chip(props) {
       <span className="chip-span">{props.item}</span>
       <FontAwesomeIcon
         icon={["fa", "times"]}
-        className="fa-times"
+        className="fa-times-chip"
         onClick={() => props.onDelete(props.item)}
       />
     </div>

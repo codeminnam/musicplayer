@@ -2,7 +2,6 @@ import React from "react";
 import { PlayList } from "../PlayList";
 import { GenreList } from "../GenreList";
 import { Content } from "../Content";
-import { list, newSortedList } from "../../mockData/songList.js";
 
 import "./styles.css";
 
@@ -11,7 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       sortingBy: "hot",
-      items: ["kpop", "soundtracks", "spanish"],
+      currentSong: "",
+      genreList: [],
       selectedItems: [],
       playlistItems: [],
       newSortedItems: []
@@ -19,9 +19,40 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    const playlistItems = [...this.state.playlistItems];
+
+    fetch('https://reddit-music-graphql.herokuapp.com/', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+        'Accept':'application/json',
+      },
+      body: JSON.stringify({
+        query: "{ reddits { title subGenreUrlList } }"
+        })
+    }).then(r => r.json())
+    .then(data => {
+      console.log(data);
+      console.log('items:', data.data.reddits);
+      const genre = data.data.reddits.map((reddit, index)=>{
+        return {
+          title: reddit.title,
+          listItems: reddit.subGenreUrlList
+        };
+      });
+      
+      // const found = genre.listItems.find(element => element> 0);
+      // console.log('found: ', found);
+
+      this.setState({
+        genreList:genre
+      });
+    });
+  }
+
+  onUpdateCurrentSong = newItem =>{
+    const videoId = newItem.match(/(\?|&)v=([^&#]+)/).pop();
     this.setState({
-      playlistItems: list
+      currentSong: videoId
     });
   }
 
@@ -45,6 +76,48 @@ class App extends React.Component {
         return true;
       })
     });
+  };
+
+  onUpdatePlaylistItems = () => {
+    const playlistItems = [...this.state.playlistItems];
+    const selectedItems = [...this.state.selectedItems];
+
+    var query = `query playlist($selectedItems: [String]!){
+      playlist(redditUrls: $selectedItems) { name songs{name url imageUrl} }
+    }`;
+
+    fetch('https://reddit-music-graphql.herokuapp.com/', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+        'Accept':'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: {selectedItems}
+      })
+    }).then(r => r.json())
+    .then(data => {
+      console.log(data);
+      console.log('items:', data.data.playlist);
+      const playlistSongs = data.data.playlist.map((songList, index)=>{
+        return {
+          name: songList.name,
+          songs: songList.songs
+        }
+      });
+
+      this.setState({
+        playlistItems: playlistSongs
+      });
+
+      console.log('playlistitems', playlistSongs);
+
+    });
+
+    
+    // console.log('url', this.playlistItems[0].songs[0].url);
+    // this.onUpdateCurrentSong(this.playListItems[0].songs[0].url);
   };
 
   onUpdateFilter = filterType => {
@@ -79,16 +152,22 @@ class App extends React.Component {
     return (
       <div className="App">
         <GenreList
-          items={this.state.items}
+          genres={this.state.genreList}
           selectedItems={this.state.selectedItems}
           onUpdateSelectedItems={this.onUpdateSelectedItems}
+          onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
         <Content
+          currentSong={this.state.currentSong}
           selectedItems={this.state.selectedItems}
+          playlistItems={this.state.playlistItems}
+          onUpdatePlaylistItems={this.onUpdatePlaylistItems}
           onDeleteSelectedItems={this.onDeleteSelectedItems}
         />
         <PlayList 
+          currentSong={this.state.currentSong}
           playlistItems={items}
+          onUpdateCurrentSong={this.onUpdateCurrentSong}
           onUpdateFilter={this.onUpdateFilter}
         />
       </div>

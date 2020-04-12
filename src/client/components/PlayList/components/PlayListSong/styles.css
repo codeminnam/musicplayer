@@ -1,12 +1,16 @@
 .playlist-song {
     display: flex;
-    height: 50px;
     flex-direction: row;
     padding: 0.8rem;
     margin: 0 0.5rem;
     border-bottom: 1px solid #aaaaaa;
-    /* vertical-align: middle; */
+    border-radius: 0.2rem;
   }
+
+.playlist-song:hover{
+  background-color: #bbbbbb;
+  cursor: pointer;
+}
 
   .playlist-img{
       width:30%;
@@ -19,8 +23,16 @@
   
   .playlist-song-title {
     font-weight: bold;
-    /* display: flex; */
-    /* justify-content: space-between; */
+  }
+
+  .playlist-genre{
+    background-color: #ddd;
+    border:none;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    border-radius: 16px;
+    padding: 5px 10px 5px 10px;
   }
   
   .playlist-song-like {
@@ -30,9 +42,6 @@
   
   .fa-heart {
     margin-right: 0.2rem;
-  }
-  
-  .playlist-img {
   }
   
   .playlist-img-thumbnail {
